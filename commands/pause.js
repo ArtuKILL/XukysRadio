@@ -4,9 +4,10 @@ module.exports = {
   execute(message, args) {
     const canalUsuario = message.member.voice.channel;
     const vozBot = message.guild.voice;
-    const conexion = message.guild.voice.connection;
+    
 if (vozBot){
     if (vozBot.channel === canalUsuario) {
+      const conexion = vozBot.connection;
       const dispatcher = conexion.dispatcher;
       dispatcher.pause(true);
       //falta poner mensaje de que se ha pausado.

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const prefix = process.env.prefix;
 const token = process.env.token;
 const Discord = require("discord.js");

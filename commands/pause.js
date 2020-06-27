@@ -15,4 +15,4 @@ if (canalUsuario){
    }
    else message.reply("**¡No estás en el mismo canal que el bot!**");
   }
-};
+}; //prueba

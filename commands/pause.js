@@ -16,4 +16,4 @@ if (vozBot){
    }
    else message.channel.send("**¡El bot no está en ningun canal!**");
   }
-}; //prueba
+}; 

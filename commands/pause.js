@@ -4,7 +4,7 @@ module.exports = {
   execute(message, args) {
     const canalUsuario = message.member.voice.channel;
     const vozBot = message.guild.voice;
-    
+  
 if (vozBot){
     if (vozBot.channel === canalUsuario) {
       const conexion = vozBot.connection;

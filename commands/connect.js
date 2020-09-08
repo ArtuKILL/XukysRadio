@@ -1,7 +1,7 @@
 module.exports = {
   name: "c",
-  description: "Connecta el bot a la radio",
-  execute(message, args) {
+  description: "Conecta el bot de la radio al canal de voz.",
+  execute(message, args, comandos) {
     var volumen = parseFloat(args[0]);
     const stream = "https://radio.loes.es/8004/stream";
     const canal = message.member.voice.channel;
@@ -16,7 +16,7 @@ module.exports = {
             `Por: ${message.author.username} <${message.author.id}>`
               .underline.bold
         );
-        const dispatcher = connection.play(stream, { volume: volumen });
+        const dispatcher = connection.play(stream, { volume: volumen, highWaterMArk: 50 });
         dispatcher.on("end", () => canal.leave());
       });
       message.channel.send(

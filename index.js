@@ -7,10 +7,13 @@ const color = require("colors");
 const fs = require("fs");
 const { codePointAt } = require('ffmpeg-static');
 const http = require('http');
+const voice = client.voice;
 
 
 
 client.commands = new Discord.Collection();
+
+
 const commandFiles = fs
   .readdirSync("./commands")
   .filter(file => file.endsWith(".js")); 
@@ -20,10 +23,13 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
+
+
+const comandos = client.commands;
+
 client.once("ready", () => {  
   console.log("XukysBot".rainbow.bold + " ¡EN MARCHA!".green.bold);
 });
-
 
 client.on("message", message => { 
   if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -34,7 +40,7 @@ client.on("message", message => {
   if (!client.commands.has(command)) return; 
 
   try {
-    client.commands.get(command).execute(message, args); //ejecuta comando
+    client.commands.get(command).execute(message, args, comandos); //ejecuta comando
   } catch (error) {
     console.error(error);
     message.reply("¡Ha habido un error ejecutando el comando!");
@@ -42,3 +48,4 @@ client.on("message", message => {
 });
 
 client.login(token);
+

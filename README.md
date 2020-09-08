@@ -1,3 +1,4 @@
 # Xukys Radio
-----------------------
-Repo de el bot de radio de xukys.net
+Repo de el bot de radio de xukys.net 
+
+## Versiones:

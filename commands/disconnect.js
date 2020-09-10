@@ -3,7 +3,7 @@ const { MessageFlags } = require("discord.js");
 module.exports = {
   name: "dc",
   description: "Desconecta el bot de la radio del canal de voz.",
-  execute(message, args, comandos) {
+  execute(message, args) {
     const canalUsuario = message.member.voice.channel;
     const vozBot = message.guild.voice;
     console.log(`${message} ${message.guild} ${message.guild.voice}`.red);

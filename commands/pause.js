@@ -1,7 +1,7 @@
 module.exports = {
   name: "p",
   description: "Pausa la transmición del bot de la radio.",
-  execute(message, args, comandos) {
+  execute(message, args) {
     const canalUsuario = message.member.voice.channel;
     const vozBot = message.guild.voice;
   

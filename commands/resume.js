@@ -1,7 +1,7 @@
 module.exports = {
   name: "r",
   description: "Si el bot esta en modo pausa, reanuda la transmisión.",
-  execute(message, args, comandos) {
+  execute(message, args) {
     const vozBot = message.guild.voice;
     const canalUsuario = message.member.voice.channel;
     if (vozBot){

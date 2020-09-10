@@ -23,10 +23,6 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
-
-
-const comandos = client.commands;
-
 client.once("ready", () => {  
   console.log("XukysBot".rainbow.bold + " ¡EN MARCHA!".green.bold);
 });
@@ -40,12 +36,14 @@ client.on("message", message => {
   if (!client.commands.has(command)) return; 
 
   try {
-    client.commands.get(command).execute(message, args, comandos); //ejecuta comando
+    client.commands.get(command).execute(message, args); //ejecuta comando
   } catch (error) {
     console.error(error);
     message.reply("¡Ha habido un error ejecutando el comando!");
   }
 });
 
+
 client.login(token);
 
+module.exports = client.commands;

@@ -1,7 +1,7 @@
 module.exports = {
   name: "c",
   description: "Conecta el bot de la radio al canal de voz.",
-  execute(message, args, comandos) {
+  execute(message, args) {
     var volumen = parseFloat(args[0]);
     const stream = "https://radio.loes.es/8004/stream";
     const canal = message.member.voice.channel;
